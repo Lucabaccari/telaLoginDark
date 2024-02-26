@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,500;1,900&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans' , sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    background: #201b2c;
+    /*Justificando itens no centro, eixos X e Y*/
+    display: flex;
+    justify-content: center; /*Geralmente, como nesse caso, representa o eixo X*/
+    align-items: center; /*Geralmente, como nesse caso, representa o eixo Y*/
+}
+
+.left-login {
+    width: 50vw; /*Pega 50% da tela, nesse caso, o lado esquerdo*/
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*Forma de deixar elementos um abaixo do ourto, quando tiver usando display flex*/
+}
+
+.left-login h1 {
+    color: #77ffc0;
+}
+
+.right-login {
+    width: 50vw; /*Pega 50% da tela, nesse caso, o lado direito*/
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60%; /*Pega 60% da DIV pai, ou seja, 60% de 50%(right-login)*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*Inputs um abaixo do outro*/
+    padding: 35px 30px; /*Preenchimento interno, eixos Y e X, respectivamente (top | bottom)*/
+    background: #2f2841;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000056; /*Sombra na caixa: eixo X | eixo Y | blur | cor*/
+}
+
+.card-login h1 {
+    color: #00ff88;
+    font-weight: 800;
+    margin: 0;
+
+}
+
+.text-field {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /*Input e label, um abaixo do outro*/
+    align-items: flex-start; /*Nesse caso, por causa do -> flex-direction column <- o align items representa o EIXO X */
+    justify-content: center; /*Nesse caso representa o EIXO Y*/ 
+    margin: 10px 0px;
+}
+
+.text-field input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+
+}
+
+.text-field label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.text-field input::placeholder {
+    color: #f0ffff94;
+    font-size: 15pt;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #00ffb052;
+    box-sizing: border-box;
+    font-size: 15pt;
+}
+
+.left-login img {
+    width: 35vw;
+}
+
+/*Media Queries*/
+
+@media (max-width:950px) {
+    .card-login{
+        width: 85%;
+    }
+}
+
+@media (max-width:600px) {
+        .main-login {
+            flex-direction: column;
+        }
+
+        .left-login h1 {
+            display: none;
+        }
+
+        .right-login {
+            width: 100%;
+            height: auto;
+        }
+
+        .left-login {
+            width: 100%;
+            height: auto;
+        }
+
+        .left-login img {
+            width: 50vw;
+            margin-bottom: 10px;
+        }
+}
